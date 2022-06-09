@@ -21,7 +21,6 @@ function App() {
       if (button === "=") {
         calculate();
       } else if (button === "C") {
-        // this.reset();
         setView("0");
       } else if (button === "CE") {
         backSpace();
@@ -53,10 +52,7 @@ function App() {
 
       if (res.includes("÷")) {
         console.log("true");
-        var wow = res.replace("÷", "/");
       }
-
-      console.log(`wow ${wow}`);
       setView(res);
     } else {
       setView("0");
@@ -92,7 +88,7 @@ function App() {
   return (
     <div className="calc">
       <CalcView handleChange={handleChange} view={view} />
-      <KeyPadComponent clear={clearName} class="grid-item" onClick={onClick} />
+      <KeyPadComponent clear={clearName} onClick={onClick} />
     </div>
   );
 }
